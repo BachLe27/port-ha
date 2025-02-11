@@ -244,22 +244,33 @@
 
 
 .animation-container {
-  position: relative;
+  position: absolute;
   width: 300px;
   height: 300px;
   z-index: -1;
+  top: 30%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  display: block;
 }
 
+@media (min-width: 768px) {
+  .animation-container {
+    display: block;
+    left: 50%;
+    top: 40%;
+  }
+}
 
 .rotating-square {
   width: 260px;
   height: 260px;
-  border-radius: 40%; /* Makes it a perfect circle */
+  border-radius: 40%;
   background: linear-gradient(135deg, rgba(255, 0, 255, 0.6), rgba(0, 102, 255, 0.6));
   filter: blur(20px);
   position: absolute;
-  top: -50%;
-  left: 0%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   mix-blend-mode: screen;
   animation: spin-slow 10s linear infinite;
